@@ -693,7 +693,7 @@ class DreamMatcherPipeline(StableDiffusionPipeline):
                 model_inputs = latents
 
             # predict the noise
-            noise_pred, _ = self.unet(
+            noise_pred = self.unet(
                 model_inputs, t, encoder_hidden_states=text_embeddings
             ).sample
             if guidance_scale > 1.0:
